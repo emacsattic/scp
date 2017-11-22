@@ -119,3 +119,5 @@
 ;; (global-set-key (kbd "C-c u") 'sftp-put)
 
 (provide 'sftp)
+
+;;; sftp.el ends here
