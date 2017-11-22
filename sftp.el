@@ -39,7 +39,7 @@
   "Determine whether the dir-local -file file exists"
   (file-exists-p (concat (locate-dominating-file default-directory dir-locals-file) dir-locals-file)))
 
-(sftp-locals-init)
+;; (sftp-locals-init)
 
 (defun sftp-show-in-buffer(msg)
   (with-current-buffer (get-buffer-create sftp-buffer-name)
@@ -68,8 +68,12 @@
 	 (user (sftp-get-alist 'user))
 	 (port (sftp-get-alist 'port))
 	 (pw (sftp-get-alist 'password))
-	 (cmd (concat sftp-tools  (unless (eq local_path buffer-file-name) " -r")
-		      (format " -P %s -pw %s " port pw)))
+	 (cmd (concat (unless (string-equal system-type "windows-nt")
+			(format "sshpass -p %s " pw))
+		      sftp-tools  (unless (eq local_path buffer-file-name) " -r")
+		      (concat " -P " port " "
+			      (when (string-equal system-type "window-nt")
+				"-pw " pw))))
 	 (remote_path (concat (sftp-remote-file-path local_path)
 			      (if (and (not (eq local_path buffer-file-name)) (string-equal status "get"))
 				  "*")))
@@ -85,6 +89,8 @@
 	 (message  (format "Please install the %s" sftp-tools)))
 	((not (sftp-exist-dir-locals-file))
 	 (message "Please set the configuration file"))
+	((and (not (eq system-type "window-nt")) (not (executable-find "sshpass")))
+	 (message "Please install the sshpass"))
 	(t (sftp-show-in-buffer (shell-command-to-string (sftp-cmd status directory))))))
 
 (defun sftp-get()
