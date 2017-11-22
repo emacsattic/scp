@@ -1,18 +1,18 @@
-;;; sftp.el ---  A SFTP implementation based on SCP command
-
-;; Copyleft (C) 2016-2017 zg
-
+;;; sftp.el --- Use the SCP command to transfer files with the remote server
+;;
+;; Copyleft (C) 2017 zg
+;;
 ;; Author: zg <13853850881@163.com>
 ;; URL: https://github.com/tszg/emacs-sftp
 ;; Package-Version: 20171122.1720
 ;; Package-X-Original-Version: 0
-;; Package-Requires: ((emacs "25.1"))
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
 ;; Keywords: convenience, sftp
-
+;;
 ;;; Commentary:
 ;; Linux USES the SCP command and the sshpass command
 ;; The PSCP command line tool is used under Windows
-
+;;
 ;;; Code:
 
 (require 'cl-lib)
