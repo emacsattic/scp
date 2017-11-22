@@ -1,4 +1,4 @@
-;;; init-sftp.el A SFTP implementation based on SCP command
+;;; sftp.el ---  A SFTP implementation based on SCP command
 
 ;; Copyleft (C) 2016-2017 zg
 
@@ -10,6 +10,8 @@
 ;; Keywords: convenience, sftp
 
 ;;; Commentary:
+;; Linux USES the SCP command and the sshpass command
+;; The PSCP command line tool is used under Windows
 
 ;;; Code:
 
