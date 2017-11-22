@@ -1,6 +1,6 @@
 ;;; init-sftp.el A SFTP implementation based on SCP command
 
-;; Copyright (C) 2016-2017 zg
+;; Copyleft (C) 2016-2017 zg
 
 ;; Author: zg <13853850881@163.com>
 ;; URL: https://github.com/tszg/emacs-sftp
