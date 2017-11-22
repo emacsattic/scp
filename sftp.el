@@ -15,7 +15,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 
 (defconst sftp-tools
   (if (string-equal system-type "windows-nt")
@@ -115,8 +115,7 @@
   (interactive "DLocal directory: ")
   (sftp "put" root))
 
-(global-set-key (kbd "C-c d") 'sftp-get)
-(global-set-key (kbd "C-c u") 'sftp-put)
-
+;; (global-set-key (kbd "C-c d") 'sftp-get)
+;; (global-set-key (kbd "C-c u") 'sftp-put)
 
 (provide 'sftp)
