@@ -1,13 +1,4 @@
 
-# Table of Contents
-
-1.  [emacs-sftp](#orgf83b7af)
-2.  [安装](#orgec14bd4)
-    1.  [linux 环境依赖](#orgb171ddc)
-    2.  [windows 环境依赖](#orgfe25dac)
-3.  [配置文件](#orgb3a25c1)
-4.  [用法](#org30db78a)
-
 [Readme here in English](README-en.md)  
 
 

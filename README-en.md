@@ -1,16 +1,4 @@
 
-# Table of Contents
-
-1.  [emacs-sftp](#orgc869146)
-2.  [Installing](#orgd6aac41)
-    1.  [Linux dependent environment](#orgb3d0a81)
-    2.  [Windows depends on the environment](#orgf49562e)
-3.  [Configuration of the sample](#org10547b7)
-    1.  [Connection information Settings](#org3cfd371)
-4.  [Usage](#org10108ff)
-
-
-
 <a id="orgc869146"></a>
 
 # emacs-sftp
