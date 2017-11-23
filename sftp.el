@@ -27,7 +27,7 @@
   "Result Buffer name."
   :type 'string)
 
-(define-derived-mode sftp-mode org-mode "Sftp Desc"
+(define-derived-mode sftp-mode org-mode "Sftp"
   "Major mode for viewing sftp result."
   (read-only-mode 1)
   (define-key sftp-mode-map "q" 'quit-window))
