@@ -1,35 +1,35 @@
 
 # Table of Contents
 
-1.  [emacs-sftp](#org960dd57)
-2.  [Installing](#org6dcc154)
-    1.  [Linux dependent environment](#org29d554e)
-    2.  [Windows depends on the environment](#org7e6fb88)
-3.  [Configuration of the sample](#org0e56f80)
-    1.  [Connection information Settings](#org127b31e)
-4.  [Usage](#org736a1c8)
+1.  [emacs-sftp](#orgf83b7af)
+2.  [安装](#orgec14bd4)
+    1.  [linux 环境依赖](#orgb171ddc)
+    2.  [windows 环境依赖](#orgfe25dac)
+3.  [配置文件](#orgb3a25c1)
+4.  [用法](#org30db78a)
+
+[Readme here in English](README-en.md)  
 
 
-
-<a id="org960dd57"></a>
+<a id="orgf83b7af"></a>
 
 # emacs-sftp
 
-SFTP is the mechanism to use the SCP command to transport files to a remote server  
+是使用SCP命令将文件传输到远程服务器  
 
 
-<a id="org6dcc154"></a>
+<a id="orgec14bd4"></a>
 
-# Installing
+# 安装
 
-Introduce sftp.el into your configuration and add it to your configuration  
+在配置文件中引入sftp.el  
 
     (require 'sftp)
 
 
-<a id="org29d554e"></a>
+<a id="orgb171ddc"></a>
 
-## Linux dependent environment
+## linux 环境依赖
 
 -   scp
 -   sshpass
@@ -37,46 +37,41 @@ Introduce sftp.el into your configuration and add it to your configuration
     apt-get install sshpass
 
 
-<a id="org7e6fb88"></a>
+<a id="orgfe25dac"></a>
 
-## Windows depends on the environment
+## windows 环境依赖
 
 -   pscp
 
-[Download the PSCP tool here and add it to path](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
+[下载pscp并将其加入到PATH中](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 
 
-<a id="org0e56f80"></a>
+<a id="orgb3a25c1"></a>
 
-# Configuration of the sample
+# 配置文件
 
-
-<a id="org127b31e"></a>
-
-## Connection information Settings
-
-Use.dir -locals. El to set the connection information for the current project  
+在当前项目下的.dir-locals.el中设置远程连接信息  
 
     ((nil
       (host ."127.0.0.1")
       (user ."username")
       (password ."password")
-      (remote_path ."/www") ;;Remote server engineering path 
+      (remote_path ."/www") ;;远程项目路径
       (port ."22")
     ))
 
-Therefore, you need to read the variables and suggest joining before you introduce SFTP  
+需要读取本地变量，建议在引入sftp之前加入  
 
     (setq enable-local-variables :all enable-local-eval t)
       (hack-dir-local-variables)
 
 
-<a id="org736a1c8"></a>
+<a id="org30db78a"></a>
 
-# Usage
+# 用法
 
--   sftp-get Download current file
--   sftp-put Upload current file
--   sftp-get-directory Download the entire folder
--   sftp-put-directory Upload the entire folder
+-   sftp-get 下载当前文件
+-   sftp-put 上传当前文件
+-   sftp-get-directory 下载目录文件
+-   sftp-put-directory 上传目录文件
 
