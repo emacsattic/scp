@@ -20,7 +20,7 @@
   (if (memq system-type '(windows-nt ms-dos))
       "pscp"
     "scp")
-  "Set sftp tool")
+  "Set sftp tool.")
 
 (defcustom sftp-buffer-name "*sftp*"
   "Result Buffer name."
