@@ -4,8 +4,7 @@
 ;;
 ;; Author: zg <13853850881@163.com>
 ;; URL: https://github.com/tszg/emacs-sftp
-;; Package-Version: 20171122.1720
-;; Package-X-Original-Version: 0
+;; Package-Version: 0
 ;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
 ;; Keywords: convenience, sftp
 ;;
