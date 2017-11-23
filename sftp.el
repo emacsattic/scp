@@ -1,6 +1,6 @@
 ;;; sftp.el --- Use the SCP command to transfer files with the remote server
 ;;
-;; Copyleft (C) 2017 zg
+;; Copyright (C) 2017 zg
 ;;
 ;; Author: zg <13853850881@163.com>
 ;; URL: https://github.com/tszg/emacs-sftp
