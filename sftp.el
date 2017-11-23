@@ -18,7 +18,7 @@
 (require 'cl-lib)
 
 (defconst sftp-tools
-  (if (string-equal system-type "windows-nt")
+  (if (memq system-type '(windows-nt ms-dos))
       "pscp"
     "scp")
   "Set sftp tool")
@@ -70,12 +70,12 @@
 	 (user (sftp-get-alist 'user))
 	 (port (sftp-get-alist 'port))
 	 (pw (sftp-get-alist 'password))
-	 (cmd (concat (unless (string-equal system-type "windows-nt")
+	 (cmd (concat (unless (memq system-type '(windows-nt ms-dos))
 			(format "sshpass -p %s " pw))
 		      sftp-tools  (unless (eq local_path buffer-file-name) " -r")
 		      (concat " -P " port " "
-			      (when (string-equal system-type "window-nt")
-				"-pw " pw))))
+			      (when (memq system-type '(windows-nt ms-dos))
+				(format "-pw %s " pw)))))
 	 (remote_path (concat (sftp-remote-file-path local_path)
 			      (if (and (not (eq local_path buffer-file-name)) (string-equal status "get"))
 				  "*")))
@@ -91,7 +91,7 @@
 	 (message  (format "Please install the %s" sftp-tools)))
 	((not (sftp-exist-dir-locals-file))
 	 (message "Please set the configuration file"))
-	((and (not (eq system-type "window-nt")) (not (executable-find "sshpass")))
+	((and (not (memq system-type '(windows-nt ms-dos))) (not (executable-find "sshpass")))
 	 (message "Please install the sshpass"))
 	(t (sftp-show-in-buffer (shell-command-to-string (sftp-cmd status directory))))))
 
