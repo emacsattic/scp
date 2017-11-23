@@ -94,25 +94,21 @@
 	 (message "Please install the sshpass"))
 	(t (sftp-show-in-buffer (shell-command-to-string (sftp-cmd status directory))))))
 
-;;;###autoload
 (defun sftp-get()
   "download"
   (interactive)
   (sftp "get"))
 
-;;;###autoload
 (defun sftp-put()
   "Upload"
   (interactive)
   (sftp "put"))
 
-;;;###autoload
 (defun sftp-get-directory(root)
   "Download the folder"
   (interactive "DLocal directory: ")
   (sftp "get" root))
 
-;;;###autoload
 (defun sftp-put-directory(root)
   "Upload folder"
   (interactive "DLocal directory: ")
