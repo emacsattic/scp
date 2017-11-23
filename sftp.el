@@ -50,13 +50,13 @@
       (sftp-mode)
       (insert msg)
       (goto-char (point-min))
-      (set (make-local-variable 'zg-sftp-current-buffer-msg) msg))
+      (set (make-local-variable 'sftp-current-buffer-msg) msg))
     (switch-to-buffer-other-window sftp-buffer-name)))
 
 (defun sftp-remote-file-path(local_path)
   "String replacement to get the remote file path"
   (replace-regexp-in-string (locate-dominating-file default-directory dir-locals-file)
-			    (concat (zg/get-alist 'remote_path) "/")
+			    (concat (sftp-get-alist 'remote_path) "/")
 			    local_path))
 
 (cl-defun sftp-get-alist(key &optional (alist file-local-variables-alist))
