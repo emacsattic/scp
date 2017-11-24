@@ -43,14 +43,12 @@
 
 ;; (sftp-locals-init)
 
-(defun sftp-show-in-buffer(msg)
+(defun sftp-show-in-buffer()
   (with-current-buffer (get-buffer-create sftp-buffer-name)
     (let ((inhibit-read-only t))
       (erase-buffer)
       (sftp-mode)
-      (insert msg)
-      (goto-char (point-min))
-      (set (make-local-variable 'sftp-current-buffer-msg) msg))
+      (goto-char (point-min)))
     (switch-to-buffer-other-window sftp-buffer-name)))
 
 (defun sftp-remote-file-path(local_path)
@@ -86,14 +84,14 @@
 
 (cl-defun sftp(status &optional (directory buffer-file-name))
   "sftp operation"
-  (message (concat "sftp " status "......"))
+  ;; (message (concat "sftp " status "......"))
   (cond ((not (executable-find sftp-tools))
 	 (message  (format "Please install the %s" sftp-tools)))
 	((not (sftp-exist-dir-locals-file))
 	 (message "Please set the configuration file"))
 	((and (not (memq system-type '(windows-nt ms-dos))) (not (executable-find "sshpass")))
 	 (message "Please install the sshpass"))
-	(t (sftp-show-in-buffer (shell-command-to-string (sftp-cmd status directory))))))
+	(t (start-process-shell-command "sftp" (sftp-show-in-buffer) (sftp-cmd status directory)))))
 
 (defun sftp-get()
   "download"
