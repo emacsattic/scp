@@ -1,11 +1,11 @@
 #+OPTIONS: \n:t
 #+OPTIONS: ^:{}
-* emacs-sftp
-SFTP is the mechanism to use the SCP command to transport files to a remote server 
+* emacs-scp
+Scp is the mechanism to use the SCP command to transport files to a remote server 
 * Installing
-Introduce sftp.el into your configuration and add it to your configuration 
+Introduce scp.el into your configuration and add it to your configuration 
 #+BEGIN_SRC emacs-lisp
-(require 'sftp)
+(require 'scp)
 #+END_SRC
 ** Linux dependent environment
 + scp
@@ -28,13 +28,13 @@ Use .dir-locals.el to set the connection information for the current project
   (port ."22")
 ))
 #+END_SRC
-Therefore, you need to read the variables and suggest joining before you introduce SFTP
+Therefore, you need to read the variables and suggest joining before you introduce scp.el
 #+BEGIN_SRC emacs-lisp
 (setq enable-local-variables :all enable-local-eval t)
   (hack-dir-local-variables)
 #+END_SRC
 * Usage
-+ sftp-get Download current file 
-+ sftp-put Upload current file 
-+ sftp-get-directory Download the entire folder 
-+ sftp-put-directory Upload the entire folder 
++ scp-get Download current file 
++ scp-put Upload current file 
++ scp-get-directory Download the entire folder 
++ scp-put-directory Upload the entire folder 

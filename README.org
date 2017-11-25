@@ -1,12 +1,12 @@
 #+OPTIONS: \n:t
 #+OPTIONS: ^:{}
 [[file:README-en.md::#%20emacs-sftp][Readme here in English]]
-* emacs-sftp
+* emacs-scp
 是使用SCP命令将文件传输到远程服务器
 * 安装
-在配置文件中引入sftp.el
+在配置文件中引入scp.el
 #+BEGIN_SRC emacs-lisp
-(require 'sftp)
+(require 'scp)
 #+END_SRC
 ** linux 环境依赖
 + scp
@@ -28,13 +28,13 @@ apt-get install sshpass
   (port ."22")
 ))
 #+END_SRC
-需要读取本地变量，建议在引入sftp之前加入
+需要读取本地变量，建议在引入scp.el之前加入
 #+BEGIN_SRC emacs-lisp
 (setq enable-local-variables :all enable-local-eval t)
   (hack-dir-local-variables)
 #+END_SRC
 * 用法
-+ sftp-get 下载当前文件
-+ sftp-put 上传当前文件
-+ sftp-get-directory 下载目录文件
-+ sftp-put-directory 上传目录文件
++ scp-get 下载当前文件
++ scp-put 上传当前文件
++ scp-get-directory 下载目录文件
++ scp-put-directory 上传目录文件

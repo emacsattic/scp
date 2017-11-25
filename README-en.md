@@ -1,47 +1,30 @@
 
-<a id="orgc869146"></a>
+# emacs-scp<a id="sec-1" name="sec-1"></a>
 
-# emacs-sftp
+Scp is the mechanism to use the SCP command to transport files to a remote server  
 
-SFTP is the mechanism to use the SCP command to transport files to a remote server  
+# Installing<a id="sec-2" name="sec-2"></a>
 
+Introduce scp.el into your configuration and add it to your configuration  
 
-<a id="orgd6aac41"></a>
+    (require 'scp)
 
-# Installing
-
-Introduce sftp.el into your configuration and add it to your configuration  
-
-    (require 'sftp)
-
-
-<a id="orgb3d0a81"></a>
-
-## Linux dependent environment
+## Linux dependent environment<a id="sec-2-1" name="sec-2-1"></a>
 
 -   scp
 -   sshpass
 
     apt-get install sshpass
 
-
-<a id="orgf49562e"></a>
-
-## Windows depends on the environment
+## Windows depends on the environment<a id="sec-2-2" name="sec-2-2"></a>
 
 -   pscp
 
 [Download the PSCP tool here and add it to path](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 
+# Configuration of the sample<a id="sec-3" name="sec-3"></a>
 
-<a id="org10547b7"></a>
-
-# Configuration of the sample
-
-
-<a id="org3cfd371"></a>
-
-## Connection information Settings
+## Connection information Settings<a id="sec-3-1" name="sec-3-1"></a>
 
 Use .dir-locals.el to set the connection information for the current project  
 
@@ -53,18 +36,14 @@ Use .dir-locals.el to set the connection information for the current project
       (port ."22")
     ))
 
-Therefore, you need to read the variables and suggest joining before you introduce SFTP  
+Therefore, you need to read the variables and suggest joining before you introduce scp.el  
 
     (setq enable-local-variables :all enable-local-eval t)
       (hack-dir-local-variables)
 
+# Usage<a id="sec-4" name="sec-4"></a>
 
-<a id="org10108ff"></a>
-
-# Usage
-
--   sftp-get Download current file
--   sftp-put Upload current file
--   sftp-get-directory Download the entire folder
--   sftp-put-directory Upload the entire folder
-
+-   scp-get Download current file
+-   scp-put Upload current file
+-   scp-get-directory Download the entire folder
+-   scp-put-directory Upload the entire folder
