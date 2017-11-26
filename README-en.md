@@ -7,14 +7,17 @@ Scp is the mechanism to use the SCP command to transport files to a remote serve
 
 Introduce scp.el into your configuration and add it to your configuration  
 
+``` emacs-lisp
     (require 'scp)
-
+```
 ## Linux dependent environment<a id="sec-2-1" name="sec-2-1"></a>
 
 -   scp
 -   sshpass
 
+``` shell
     apt-get install sshpass
+```
 
 ## Windows depends on the environment<a id="sec-2-2" name="sec-2-2"></a>
 
@@ -28,6 +31,7 @@ Introduce scp.el into your configuration and add it to your configuration
 
 Use .dir-locals.el to set the connection information for the current project  
 
+``` emacs-lisp
     ((nil
       (host ."127.0.0.1")
       (user ."username")
@@ -35,15 +39,17 @@ Use .dir-locals.el to set the connection information for the current project
       (remote_path ."/www") ;;Remote server engineering path 
       (port ."22")
     ))
+```
 
 Therefore, you need to read the variables and suggest joining before you introduce scp.el  
 
+``` emacs-lisp
     (setq enable-local-variables :all enable-local-eval t)
-      (hack-dir-local-variables)
+```
 
 # Usage<a id="sec-4" name="sec-4"></a>
 
--   scp-get Download current file
--   scp-put Upload current file
--   scp-get-directory Download the entire folder
--   scp-put-directory Upload the entire folder
+-   `scp-get` Download current file
+-   `scp-put` Upload current file
+-   `scp-get-directory` Download the entire folder
+-   `scp-put-directory` Upload the entire folder
