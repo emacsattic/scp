@@ -9,14 +9,18 @@
 
 在配置文件中引入scp.el  
 
+``` emacs-lisp
     (require 'scp)
+```
 
 ## linux 环境依赖<a id="sec-2-1" name="sec-2-1"></a>
 
 -   scp
 -   sshpass
 
+``` shell
     apt-get install sshpass
+```
 
 ## windows 环境依赖<a id="sec-2-2" name="sec-2-2"></a>
 
@@ -28,6 +32,7 @@
 
 在当前项目下的.dir-locals.el中设置远程连接信息  
 
+``` emacs-lisp
     ((nil
       (host ."127.0.0.1")
       (user ."username")
@@ -36,14 +41,15 @@
       (port ."22")
     ))
 
+```
 需要读取本地变量，建议在引入scp.el之前加入  
 
+``` emacs-lisp
     (setq enable-local-variables :all enable-local-eval t)
-      (hack-dir-local-variables)
-
+```
 # 用法<a id="sec-4" name="sec-4"></a>
 
--   scp-get 下载当前文件
--   scp-put 上传当前文件
--   scp-get-directory 下载目录文件
--   scp-put-directory 上传目录文件
+-   `scp-get` 下载当前文件
+-   `scp-put` 上传当前文件
+-   `scp-get-directory` 下载目录文件
+-   `scp-put-directory` 上传目录文件
