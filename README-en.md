@@ -23,7 +23,7 @@ Introduce scp.el into your configuration and add it to your configuration
 
 -   pscp
 
-[Download the PSCP tool here and add it to path](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
+	[Download the PSCP tool here and add it to path](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 
 # Configuration of the sample<a id="sec-3" name="sec-3"></a>
 

@@ -26,7 +26,7 @@
 
 -   pscp
 
-[下载pscp并将其加入到PATH中](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
+	[下载pscp并将其加入到PATH中](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 
 # 配置文件<a id="sec-3" name="sec-3"></a>
 
