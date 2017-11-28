@@ -9,7 +9,6 @@
 ;; Keywords: convenience, scp
 ;;
 ;;; Commentary:
-;; (require 'scp)
 ;; Linux USES the SCP command and the sshpass command
 ;; The PSCP command line tool is used under Windows
 ;;
@@ -93,21 +92,25 @@
 	 (message "Please install the sshpass"))
 	(t (start-process-shell-command "scp" (scp-show-in-buffer) (scp-cmd status directory)))))
 
+;;;###autoload
 (defun scp-get()
   "download"
   (interactive)
   (scp "get"))
 
+;;;###autoload
 (defun scp-put()
   "Upload"
   (interactive)
   (scp "put"))
 
+;;;###autoload
 (defun scp-get-directory(root)
   "Download the folder"
   (interactive "DLocal directory: ")
   (scp "get" root))
 
+;;;###autoload
 (defun scp-put-directory(root)
   "Upload folder"
   (interactive "DLocal directory: ")
