@@ -45,7 +45,8 @@
 
 (defun scp-remote-file-path(local-path)
   "String replacement to get the remote file path"
-  (replace-regexp-in-string (locate-dominating-file default-directory dir-locals-file)
+  (replace-regexp-in-string (regexp-quote
+			     (locate-dominating-file default-directory dir-locals-file))
 			    (concat (scp-get-alist 'remote-path) "/")
 			    local-path))
 
