@@ -17,6 +17,10 @@
 
 (require 'cl-lib)
 
+(define-derived-mode scp-mode special-mode "Scp"
+  "Major mode for viewing Scp result."
+  (read-only-mode 1))
+
 (defconst scp-tools
   (if (memq system-type '(windows-nt ms-dos))
       "pscp"
@@ -27,21 +31,9 @@
   "Result Buffer name."
   :type 'string)
 
-(define-derived-mode scp-mode org-mode "Scp"
-  "Major mode for viewing Scp result."
-  (read-only-mode 1)
-  (define-key scp-mode-map "q" 'quit-window))
-
-(defun scp-locals-init()
-  "Get local variables"
-  (setq enable-local-variables :all enable-local-eval t)
-  (hack-dir-local-variables))
-
 (defun scp-exist-dir-locals-file()
   "Determine whether the dir-local -file file exists"
   (file-exists-p (concat (locate-dominating-file default-directory dir-locals-file) dir-locals-file)))
-
-;; (scp-locals-init)
 
 (defun scp-show-in-buffer()
   (with-current-buffer (get-buffer-create scp-buffer-name)
@@ -63,7 +55,7 @@
 
 (defun scp-cmd(status &optional local_path)
   "Stitching scp command"
-  (scp-locals-init)
+  (hack-dir-local-variables)
   (let* ((host (scp-get-alist 'host))
 	 (user (scp-get-alist 'user))
 	 (port (scp-get-alist 'port))
