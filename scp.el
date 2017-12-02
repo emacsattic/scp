@@ -102,13 +102,13 @@
 (defun scp-get-directory(root)
   "Download the folder"
   (interactive "DLocal directory: ")
-  (scp "get" root))
+  (scp "get" (shell-quote-argument root)))
 
 ;;;###autoload
 (defun scp-put-directory(root)
   "Upload folder"
   (interactive "DLocal directory: ")
-  (scp "put" root))
+  (scp "put" (shell-quote-argument root)))
 
 (provide 'scp)
 
