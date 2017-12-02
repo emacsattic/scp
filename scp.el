@@ -43,17 +43,17 @@
       (goto-char (point-min)))
     (switch-to-buffer-other-window scp-buffer-name)))
 
-(defun scp-remote-file-path(local_path)
+(defun scp-remote-file-path(local-path)
   "String replacement to get the remote file path"
   (replace-regexp-in-string (locate-dominating-file default-directory dir-locals-file)
-			    (concat (scp-get-alist 'remote_path) "/")
-			    local_path))
+			    (concat (scp-get-alist 'remote-path) "/")
+			    local-path))
 
 (cl-defun scp-get-alist(key &optional (alist file-local-variables-alist))
   "Gets the value of the Association List"
   (cdr (assoc key alist)))
 
-(defun scp-cmd(status &optional local_path)
+(defun scp-cmd(status &optional local-path)
   "Stitching scp command"
   (hack-dir-local-variables)
   (let* ((host (scp-get-alist 'host))
@@ -62,16 +62,16 @@
 	 (pw (scp-get-alist 'password))
 	 (cmd (concat (unless (memq system-type '(windows-nt ms-dos))
 			(format "sshpass -p %s " pw))
-		      scp-tools  (unless (eq local_path buffer-file-name) " -r")
+		      scp-tools  (unless (eq local-path buffer-file-name) " -r")
 		      (concat " -P " port " "
 			      (when (memq system-type '(windows-nt ms-dos))
 				(format "-pw %s " pw)))))
-	 (remote_path (concat (scp-remote-file-path local_path)
-			      (if (and (not (eq local_path buffer-file-name)) (string-equal status "get"))
+	 (remote-path (concat (scp-remote-file-path local-path)
+			      (if (and (not (eq local-path buffer-file-name)) (string-equal status "get"))
 				  "*")))
 	 (cmd_list (if (string= status "put")
-		       (format "%s %s@%s:%s" local_path user host remote_path)
-		     (format "%s@%s:%s %s" user host remote_path local_path))))
+		       (format "%s %s@%s:%s" local-path user host remote-path)
+		     (format "%s@%s:%s %s" user host remote-path local-path))))
     (concat cmd cmd_list)))
 
 (cl-defun scp(status &optional (directory buffer-file-name))
