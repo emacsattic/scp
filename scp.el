@@ -56,10 +56,14 @@
 (defun scp-cmd(status &optional local-path)
   "Stitching scp command"
   (hack-dir-local-variables)
-  (let* ((host (scp-get-alist 'host))
-	 (user (scp-get-alist 'user))
-	 (port (scp-get-alist 'port))
-	 (pw (scp-get-alist 'password))
+  (let* ((host
+	  (shell-quote-argument (scp-get-alist 'host)))
+	 (user
+	  (shell-quote-argument (scp-get-alist 'user)))
+	 (port
+	  (shell-quote-argument (scp-get-alist 'port)))
+	 (pw
+	  (shell-quote-argument (scp-get-alist 'password)))
 	 (cmd (concat (unless (memq system-type '(windows-nt ms-dos))
 			(format "sshpass -p %s " pw))
 		      scp-tools  (unless (eq local-path buffer-file-name) " -r")
