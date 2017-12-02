@@ -36,7 +36,7 @@ Use .dir-locals.el to set the connection information for the current project
       (host ."127.0.0.1")
       (user ."username")
       (password ."password")
-      (remote_path ."/www") ;;Remote server engineering path 
+      (remote-path ."/www") ;;Remote server engineering path 
       (port ."22")
     ))
 ```

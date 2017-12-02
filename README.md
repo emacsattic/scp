@@ -37,7 +37,7 @@
       (host ."127.0.0.1")
       (user ."username")
       (password ."password")
-      (remote_path ."/www") ;;远程项目路径
+      (remote-path ."/www") ;;远程项目路径
       (port ."22")
     ))
 
