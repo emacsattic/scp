@@ -8,11 +8,9 @@
 
 # 安装<a id="sec-2" name="sec-2"></a>
 
-在配置文件中引入scp.el  
+推荐通过package.el安装,你可以使用以下命令:
 
-``` emacs-lisp
-    (require 'scp)
-```
+	<kbd>M-x</kbd> `package-install` <kbd>[RET]</kbd> `scp` <kbd>[RET]</kbd>
 
 ## linux 环境依赖<a id="sec-2-1" name="sec-2-1"></a>
 
