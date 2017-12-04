@@ -8,7 +8,7 @@ Scp is the mechanism to use the SCP command to transport files to a remote serve
 
 Recommended through the package.el installation, you can use the following command :
 
-	<kbd>M-x</kbd> `package-install` <kbd>[RET]</kbd> `scp` <kbd>[RET]</kbd>
+<kbd>M-x</kbd> `package-install` <kbd>[RET]</kbd> `scp` <kbd>[RET]</kbd>
 
 ## Linux dependent environment<a id="sec-2-1" name="sec-2-1"></a>
 
