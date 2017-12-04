@@ -1,3 +1,4 @@
+[![MELPA](https://melpa.org/packages/scp-badge.svg)](https://melpa.org/#/scp)
 
 [Readme here in English](README-en.md)  
 
