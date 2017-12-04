@@ -4,7 +4,7 @@
 
 # emacs-scp<a id="sec-1" name="sec-1"></a>
 
-是使用SCP命令将文件传输到远程服务器  
+使用SCP命令将文件传输到远程服务器  
 
 # 安装<a id="sec-2" name="sec-2"></a>
 
