@@ -1,8 +1,6 @@
-[![MELPA](https://melpa.org/packages/scp-badge.svg)](https://melpa.org/#/scp)
-
 [Readme here in English](README-en.md)  
 
-# emacs-scp<a id="sec-1" name="sec-1"></a>
+# emacs-scp<a id="sec-1" name="sec-1"></a> [![MELPA](https://melpa.org/packages/scp-badge.svg)](https://melpa.org/#/scp)
 
 使用SCP命令将文件传输到远程服务器  
 

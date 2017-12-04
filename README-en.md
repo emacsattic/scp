@@ -1,6 +1,5 @@
-[![MELPA](https://melpa.org/packages/scp-badge.svg)](https://melpa.org/#/scp)
 
-# emacs-scp<a id="sec-1" name="sec-1"></a>
+# emacs-scp<a id="sec-1" name="sec-1"></a> [![MELPA](https://melpa.org/packages/scp-badge.svg)](https://melpa.org/#/scp)
 
 Scp is the mechanism to use the SCP command to transport files to a remote server  
 
