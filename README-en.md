@@ -1,3 +1,4 @@
+[![MELPA](https://melpa.org/packages/scp-badge.svg)](https://melpa.org/#/scp)
 
 # emacs-scp<a id="sec-1" name="sec-1"></a>
 
@@ -5,11 +6,10 @@ Scp is the mechanism to use the SCP command to transport files to a remote serve
 
 # Installing<a id="sec-2" name="sec-2"></a>
 
-Introduce scp.el into your configuration and add it to your configuration  
+Recommended through the package.el installation, you can use the following command :
 
-``` emacs-lisp
-    (require 'scp)
-```
+<kbd>M-x</kbd> `package-install` <kbd>[RET]</kbd> `scp` <kbd>[RET]</kbd>
+
 ## Linux dependent environment<a id="sec-2-1" name="sec-2-1"></a>
 
 -   scp
